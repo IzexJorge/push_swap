@@ -1,6 +1,7 @@
 
 #include "push_swap.h"
 
+//TODO Crear lstclear para circulares.
 static void	free_stacks(t_data *data)
 {
 	ft_lstclear(&(data->stack_a), free);
@@ -10,19 +11,19 @@ static void	free_stacks(t_data *data)
 static void	free_existing_digit_values(t_data *data)
 {
 	int	**existing_digit_values;
-	int	i;
-	int	*inner_array;
+	int	digit;
+	int	*digit_array;
 
 	existing_digit_values = data->existing_digit_values;
 	if (existing_digit_values == NULL)
 		return;
-	i = 0;
-	inner_array = existing_digit_values[i];
-	while (inner_array != NULL)
+	digit = 0;
+	digit_array = existing_digit_values[digit];
+	while (digit_array != NULL)
 	{
-		free(inner_array);
-		i++;
-		inner_array = existing_digit_values[i];
+		free(digit_array);
+		digit++;
+		digit_array = existing_digit_values[digit];
 	}
 	free(existing_digit_values);
 }
