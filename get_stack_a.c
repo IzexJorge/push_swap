@@ -1,7 +1,7 @@
 
 #include "push_swap.h"
 
-static int  get_int(char *str, t_data *data)
+int  get_int(char *str, t_data *data)
 {
     int         sign;
     size_t      i;
@@ -37,6 +37,8 @@ static int  *get_int_ptr(char *str, t_data *data)
 
     num = get_int(str, data);
     check_duplicates(num, data);
+    if (num > data->max_num)
+        data->max_num = num;
     p = malloc(sizeof(int));
     if (p == NULL)
         ft_print_error(data);

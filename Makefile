@@ -5,14 +5,13 @@ SRC = push_swap.c \
 	circular_list.c \
 	binary_search_tree.c \
 	get_stack_a.c \
-	existing_digit_values.c \
+	fill_existing_digit_values.c \
+	get_existing_digit_values.c \
 	push.c \
 	swap.c \
 	rotate.c \
 	reverse_rotate.c \
-	sort.c \
-	
-
+	sort.c
 OBJ = $(SRC:.c=.o)
 DEPS = $(OBJ) libft/libft.a printf/libftprintf.a push_swap.h
 LIBFT = -Llibft -lft
